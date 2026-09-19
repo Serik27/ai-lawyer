@@ -1,0 +1,28 @@
+# Секрети та конфігурація
+.env
+*.env
+!*.env.example
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Віртуальне оточення
+venv/
+.venv/
+env/
+
+# Логи (директорія створюється автоматично скриптами)
+logs/
+*.log
+
+# Кеш браузерів та Playwright
+.playwright/
+opt/
+
+# Проксі та тимчасові файли
+proxies.txt
+
+# Локальні дані БД
+db_data/
