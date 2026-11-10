@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: ai_lawyer_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: law_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: my_secret_pass_123
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d law_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+

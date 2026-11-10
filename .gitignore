@@ -3,6 +3,9 @@
 *.env
 !*.env.example
 
+# Клієнтські агенти / локальні налаштування
+.agent/
+
 # Кеш Python
 __pycache__/
 *.py[cod]
@@ -13,16 +16,18 @@ venv/
 .venv/
 env/
 
-# Логи (директорія створюється автоматично скриптами)
+# Логи
 logs/
 *.log
 
-# Кеш браузерів та Playwright
+# Кеш моделей та браузерів (FlashRank, Playwright)
 .playwright/
 opt/
 
-# Проксі та тимчасові файли
+# Проксі та службові файли
 proxies.txt
+11.txt
 
-# Локальні дані БД
+# Локальні дані БД PostgreSQL та словники
 db_data/
+pg_dictionaries/

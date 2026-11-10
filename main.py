@@ -115,6 +115,10 @@ if __name__ == "__main__":
         subprocess.run([sys.executable, "database_setup.py"], check=True)
     except subprocess.CalledProcessError as e:
         logger.critical(f"❌ КРИТИЧНА ПОМИЛКА БД. Код виходу: {e.returncode}")
+        logger.critical("💡 Підказка: Сервер PostgreSQL на порту 5433 не запущений (Connection refused).")
+        logger.critical("   1. Переконайтеся, що Docker Desktop запущено.")
+        logger.critical("   2. Виконайте в терміналі команду: docker compose up -d")
+        logger.critical("   3. Або, якщо PostgreSQL встановлено локально у Windows, змініть порт у .env на 5432.")
         sys.exit(1)
     
     # 3. ЗАПУСК СЕРВІСІВ (Критичний порядок)
@@ -127,6 +131,9 @@ if __name__ == "__main__":
     
     # 3.3. Telegram Bot (основний інтерфейс)
     start_system_process("bot.py", delay=2) 
+    
+    # 3.4. Web Server (сайт та онлайн-консультант)
+    start_system_process("web_server.py", delay=2) 
     
     logger.info("\n=======================================================")
     logger.info("✅ СИСТЕМА ПРАЦЮЄ! Натисніть Ctrl+C для зупинки.")
