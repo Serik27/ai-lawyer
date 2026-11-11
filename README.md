@@ -1,3 +1,5 @@
+<img width="1827" height="912" alt="image" src="https://github.com/user-attachments/assets/59ccf2a1-ed71-4ccd-b7b4-b7b6b7fabadb" />
+
 🇺🇦 AI Legal Assistant (AI-Юрист) System Documentation
 
 ШІ-юрист — це інтелектуальна RAG (Retrieval-Augmented Generation) система, реалілізована у вигляді Telegram-бота. Вона призначена для пошуку, аналізу та трактування законодавства України, а також для надання статистичної аналітики на основі актуальних даних з порталу Верховної Ради.
